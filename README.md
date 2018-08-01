@@ -1,19 +1,13 @@
-This project provides a simple example of a toggle component and render props. The content of what is toggled is provided by the client.
+This project provides a simple example of a portal component. The content of what is toggled is provided by the client.
 
-The starting point is this project:
+A portal can be used for things like a modal, which essentially overlays everything else.
 
-https://github.com/rmemory/react-basic-boilerplate
+Basically, it allows us to insert whatever HTML into anywhere in the DOM. A Modal is just one example, but pretty much anything you need to just insert somewhere else, but you still want to maintain the same state as the rest of your application, is a candidate for using the portal. 
 
-It provides an example of the ng-if type syntax, 
+See the public/index.html, and look for this element:
 
 ```
-	{
-		this.state.someVal
-		&& <h1>Toggle Me</h1>
-	}
+  <!-- Top div for react to use via portal -->
+  <div id="portal"></div>
 ```
-
-There is an example of an explict "render" prop, as well as the same functionality implemented using "children" props.
-
-The toggle pattern also serves as a basis to provide modal functionality, but its also useful for menus as well.
 

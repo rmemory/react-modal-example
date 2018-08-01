@@ -4,6 +4,7 @@ import React, { Fragment } from 'react';
 import './app.css';
 
 import Toggle from './Toggle.jsx';
+import Portal from './Portal.jsx';
 
 const App = () => (
 	<div className="App">
@@ -22,6 +23,12 @@ const App = () => (
 					<button type="submit" onClick={toggle}>
 						Show/Hide
 					</button>
+					<Portal>
+						{
+							on
+							&& <h1>This element is part of the portal and can be placed anywhere</h1>
+						}
+					</Portal>
 				</Fragment>
 			)}
 		</Toggle>
