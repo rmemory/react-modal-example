@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -76,4 +77,3 @@ const Background = styled.div`
 	background: black;
 	opacity: 0.5;
 `;
-
