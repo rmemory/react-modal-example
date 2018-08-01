@@ -4,50 +4,27 @@ import React, { Fragment } from 'react';
 import './app.css';
 
 import Toggle from './Toggle.jsx';
-import Portal from './Portal.jsx';
+import Modal from './Modal.jsx';
 
 const App = () => (
 	<div className="App">
 		<header className="App-header">
 			<h1>
-				A simple toggle pattern using React
+				A simple modal window example using React
 			</h1>
 		</header>
+
 		<Toggle>
 			{({ on, toggle }) => (
 				<Fragment>
-					{
-						on
-						&& <h1>Toggle Me</h1>
-					}
-					<button type="submit" onClick={toggle}>
-						Show/Hide
-					</button>
-					<Portal>
-						{
-							on
-							&& <h1>This element is part of the portal and can be placed anywhere</h1>
-						}
-					</Portal>
+					<button type="submit" onClick={toggle}>Open modal window</button>
+					<Modal on={on} toggle={toggle}>
+						<h1>This is the modal stuff</h1>
+						<p>More modal stuff</p>
+					</Modal>
 				</Fragment>
 			)}
 		</Toggle>
-
-		<br />
-
-		<Toggle
-			render={({ on, toggle }) => (
-				<Fragment>
-					{
-						on
-						&& <nav>Menu</nav>
-					}
-					<button type="submit" onClick={toggle}>
-						Show menu
-					</button>
-				</Fragment>
-			)}
-		/>
 	</div>
 );
 
